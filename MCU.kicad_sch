@@ -1723,7 +1723,6 @@
   (no_connect (at 151.13 76.2) (uuid cef7402d-69f9-4ebe-8e8e-403e03290c65))
   (no_connect (at 151.13 71.12) (uuid cf18141d-836f-4e77-a94f-c809deffa93b))
   (no_connect (at 151.13 81.28) (uuid ef48b6a3-ec13-4618-b427-8d37c69d8908))
-  (no_connect (at 151.13 96.52) (uuid f03c9c54-bac0-41a4-81ce-eee255875eb7))
   (no_connect (at 151.13 83.82) (uuid f4aa785a-c945-41b2-9cb4-d8b4438645b3))
 
   (wire (pts (xy 246.38 57.15) (xy 246.38 60.96))
@@ -2146,6 +2145,10 @@
     (stroke (width 0) (type default))
     (uuid c32571bd-2ab5-4dd4-a640-8265706e6097)
   )
+  (wire (pts (xy 151.13 96.52) (xy 154.94 96.52))
+    (stroke (width 0) (type default))
+    (uuid c44f5e1d-1673-4a70-a0f8-92674d003b7a)
+  )
   (wire (pts (xy 52.07 166.37) (xy 52.07 167.64))
     (stroke (width 0) (type default))
     (uuid c5e4ad1a-48c9-4471-b9df-d2e5f2d18b0b)
@@ -2460,6 +2463,10 @@
     (uuid fcfedf38-e601-4e87-9824-f8188f8685ff)
   )
 
+  (hierarchical_label "HAP_PWM" (shape output) (at 154.94 96.52 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 497163ee-de09-4c2a-bfa5-32870d9e938b)
+  )
   (hierarchical_label "LED_PWM" (shape output) (at 154.94 99.06 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid cb67c07e-fa0d-4ec4-8062-08b77268dc2b)
@@ -3349,6 +3356,46 @@
       (project "V1_Main"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/f711db5e-77b0-4494-90e8-aecb55e572ba"
           (reference "C2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3V3") (at 58.42 44.45 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 45011e47-21f6-47e8-b5f8-21b1be5e85bd)
+    (property "Reference" "#PWR034" (at 62.23 44.45 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3V3" (at 54.61 46.99 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "" (at 58.42 44.45 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 58.42 44.45 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid d5420253-b422-42a5-8328-95be11a30f85))
+    (instances
+      (project "V2_Main"
+        (path "/2426fb93-57a0-4a38-a355-1b8504d03262/811f6d49-44ef-446a-a262-9e00ea03fcb8"
+          (reference "#PWR034") (unit 1)
+        )
+      )
+      (project "V3_Main"
+        (path "/34608048-0348-41a9-a792-f9741d67937a/b079f921-e296-417c-8081-ff257ef2f91a"
+          (reference "#PWR044") (unit 1)
+        )
+      )
+      (project "Light-CC"
+        (path "/a3254443-8240-44f0-af35-274db02f779b/04c702c6-04db-4682-92c6-1d956531dc1e"
+          (reference "#PWR048") (unit 1)
+        )
+      )
+      (project "V1_Main"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/f711db5e-77b0-4494-90e8-aecb55e572ba"
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -5720,46 +5767,6 @@
       (project "V1_Main"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/f711db5e-77b0-4494-90e8-aecb55e572ba"
           (reference "#PWR011") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:+5V") (at 58.42 44.45 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid f85378ca-8c55-41f2-805b-8ae78a24e6f8)
-    (property "Reference" "#PWR025" (at 62.23 44.45 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+5V" (at 58.42 41.91 90)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (at 58.42 44.45 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 58.42 44.45 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 9ee51dba-4ef8-4719-b3c0-84eb3259b286))
-    (instances
-      (project "V2_Main"
-        (path "/2426fb93-57a0-4a38-a355-1b8504d03262/811f6d49-44ef-446a-a262-9e00ea03fcb8"
-          (reference "#PWR025") (unit 1)
-        )
-      )
-      (project "V3_Main"
-        (path "/34608048-0348-41a9-a792-f9741d67937a/b079f921-e296-417c-8081-ff257ef2f91a"
-          (reference "#PWR055") (unit 1)
-        )
-      )
-      (project "Light-CC"
-        (path "/a3254443-8240-44f0-af35-274db02f779b/04c702c6-04db-4682-92c6-1d956531dc1e"
-          (reference "#PWR013") (unit 1)
-        )
-      )
-      (project "V1_Main"
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/f711db5e-77b0-4494-90e8-aecb55e572ba"
-          (reference "#PWR09") (unit 1)
         )
       )
     )
